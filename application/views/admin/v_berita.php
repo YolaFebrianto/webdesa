@@ -32,6 +32,7 @@
         </p>
         <div id="w0" class="grid-view">
             <table class="table table-striped table-bordered">
+                <div class="scrollable" style="overflow:scroll;">
                 <thead>
                     <tr>
                         <th>
@@ -89,6 +90,7 @@
                         </a>
 
                 </tbody>
+                </div>
             </table>
         </div>
 

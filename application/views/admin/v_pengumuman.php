@@ -50,6 +50,9 @@
                             <a href="#" data-sort="">author</a>
                         </th>
                         <th>
+                            <a href="#" data-sort="">gambar</a>
+                        </th>
+                        <th>
                             <a href="#" data-sort="isi">Opsi</a>
                         </th>
                     </tr>
@@ -62,6 +65,7 @@
                         <td><?= substr(strip_tags($value->isi_pengumuman), 0, 10) . '...' ?></td>
                         <td><?= $value->tgl ?></td>
                         <td><?= $value->pengumuman_author ?></td>
+                        <td><?= $value->gambar?></td>
                         <td>
                             <i class="far fa-edit"></i><a
                                 href="<?php echo base_url('admin/edit_pengumuman/') . $value->id_pengumuman ?>">Edit</a>

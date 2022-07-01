@@ -59,7 +59,7 @@
                     </div>
                     </li>
                     <li class="smoothscroll"><a class="nav-link" href="#kontak">KONTAK</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('welcome/login') ?>">MASUK</a></li>
+                    <button><a class="nav-link" href="<?php echo base_url('welcome/login') ?>">MASUK</a></button>
                 </ul>
             </div>
         </div>

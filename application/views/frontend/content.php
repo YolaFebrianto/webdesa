@@ -117,7 +117,7 @@
                             <h2 class="h4"><i class="fa fa-location-arrow"></i> Locate Us</h2>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="static-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2591546261347!2d112.60817181432266!3d-7.436550475330526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780a02b07a5175%3A0xaa5bfbe418f34bc8!2sBalai%20Desa%20Semambung!5e0!3m2!1sid!2sid!4v1652749158625!5m2!1sid!2sid" width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                                    <div class="static-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2591546261347!2d112.60817181432266!3d-7.436550475330526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780a02b07a5175%3A0xaa5bfbe418f34bc8!2sBalai%20Desa%20Semambung!5e0!3m2!1sid!2sid!4v1652749158625!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                                 </div>
                                 <div class="col-sm-6 col-md-12 col-lg-6">
                                     <h2 class="h4"><i class="fa fa-user"></i> Our Info</h2>
