@@ -3,11 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 {
-public function __construct()
-{
-	parent ::__construct();
-	$this->load->library('form_validation');
-}
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -39,9 +35,9 @@ public function __construct()
 		$data['jml_pengumuman'] = $this->db->get('tbl_pengumuman')->num_rows();
 		$data['jml_berita'] = $this->db->get('tbl_berita')->num_rows();
 		$data['jml_galeri'] = $this->db->get('tbl_galeri')->num_rows();
-		$this->load->view('templates/header');
-		$this->load->view('templates/content', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('frontend/header');
+		$this->load->view('frontend/content', $data);
+		$this->load->view('frontend/footer');
 	}
 	public function semua_berita()
 	{
@@ -49,114 +45,91 @@ public function __construct()
 		$data['berita_header'] = $this->db->get_where('tbl_berita', [], 1)->row_array();
 		$this->db->order_by('tgl', 'desc');
 		$data['berita'] = $this->db->get('tbl_berita');
-		$this->load->view('templates/header');
-		$this->load->view('templates/semua_berita', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('frontend/header');
+		$this->load->view('frontend/semua_berita', $data);
+		$this->load->view('frontend/footer');
 	}
 	public function detail_berita($id)
  	{
- 		$data['berita'] = $this->db->get('tbl_berita');
  		$data['berita'] = $this->db->get_where('tbl_berita', ['id_berita' => $id])->row_array();
- 		$this->load->view('templates/header');
- 		$this->load->view('templates/detail_berita',$data);
- 		$this->load->view('templates/footer');
+ 		$this->load->view('frontend/header');
+ 		$this->load->view('frontend/detail_berita', $data);
+ 		$this->load->view('frontend/footer');
 	}
-	public function kontak()
-	 {
-	 	$this->load->view('templates/header');
-		 $this->load->view('templates/kontak');
-	 	$this->load->view('templates/footer');	
-	 }
+// }
+// 	
+// 	public function semua_pengumuman()
+// 	{
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['pengumuman_header'] = $this->db->get_where('tbl_pengumuman', [], 1)->row_array();
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['pengumuman'] = $this->db->get('tbl_pengumuman');
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/semua_pengumuman', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function detail_pengumuman($id)
+// 	{
+// 		$data['pengumuman'] = $this->db->get_where('tbl_pengumuman', ['id_pengumuman' => $id])->row_array();
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/detail_pengumuman', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function semua_agenda()
+// 	{
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['agenda_header'] = $this->db->get_where('tbl_agenda', [], 1)->row_array();
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['agenda'] = $this->db->get('tbl_agenda');
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/semua_agenda', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function detail_agenda($id)
+// 	{
+// 		$data['agenda'] = $this->db->get_where('tbl_agenda', ['id_agenda' => $id])->row_array();
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/detail_agenda', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function semua_galeri()
+// 	{
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['galeri_header'] = $this->db->get_where('tbl_galeri', [], 1)->row_array();
+// 		$this->db->order_by('tgl', 'desc');
+// 		$data['galeri'] = $this->db->get('tbl_galeri');
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/semua_galeri', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function detail_galeri($id)
+// 	{
+// 		$data['galeri'] = $this->db->get_where('tbl_galeri', ['id_galeri' => $id])->row_array();
+// 		$this->load->view('template/header');
+// 		$this->load->view('template/detail_galeri', $data);
+// 		$this->load->view('template/footer');
+// 	}
+// 	public function about()
+// 	 {
+// 	 	$this->load->view('template/header');
+// 		 $this->load->view('template/about');
+// 	 	$this->load->view('template/footer');	
+// 	 }
 	 public function aspirasi()
 	 {
-	 	if (!empty($this->input->post('btnsubmit'))) {
-			$data = [
-				'id'	=> $this->input->post('id'),
-				'nama_pelapor' => $this->input->post('nama'),
-				'email' => $this->input->post('email'),
-				'alamat'=> $this->input->post('alamat'),
-				'tgl' => $this->input->post('tanggal'),
-				'isi' => $this->input->post('isi'),
-				'gambar' => $this->input->post('gambar')
-			];
-
-			$this->db->insert('tbl_aspirasi', $data);
-			$this->session->set_flashdata('success', 'aspirasi Berhasil Ditambahkan!');
-		}
-		$data['aspirasi'] = $this->db->get('tbl_aspirasi');
-	 	$this->load->view('templates/header');
-		 $this->load->view('templates/aspirasi', $data);
-	 	$this->load->view('templates/footer');	
+	 	$this->load->view('frontend/header');
+		 $this->load->view('frontend/aspirasi');
+	 	$this->load->view('frontend/footer');	
 	 }
 	 public function pengaduan()
 	 {
-	 	$this->load->view('templates/header');
-		 $this->load->view('templates/pengaduan');
-	 	$this->load->view('templates/footer');	
+	 	$this->load->view('frontend/header');
+		 $this->load->view('frontend/pengaduan');
+	 	$this->load->view('frontend/footer');	
 	 }
 	 public function login ()
 	 {
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/login');
-		} else {
-
-			$email = $this->input->post('email');
-			$password = password_hash($this->input->post('password'));
-
-			$user = $this->db->get_where('tbl_user',['email' => $email])->row();
-			
-			if(!$user) {
-				$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-				redirect(uri_string());
-			}
-
-	
-			if(!password_verify($password,$user->password)) {
-				$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-				redirect(uri_string());
-			}
-
-			 $data = array(
-					'user_id' => $user->user_id,
-					'first_name' => $user->first_name,
-					'last_name' => $user->last_name,
-					'email' => $user->email,
-					);
-
-				
-			$this->session->set_userdata($data);
-
-			//redirect('/'); // redirect to home
-			echo 'Login success!'; exit;
-			
-		}		
-	}
-	public function logout(){
-        $this->session->sess_destroy();
-        redirect('welcome');
-    }
-	 public function registrasi()
-	 {
-
-	 	if ($this->form_validation->run() == false ) {
-	 		$this->load->view('templates/registrasi');
-	 	} else{
-	 		$data = [
-	 			'nama' => htmlspecialchars($this->input->post('username', true)),
-	 			'email' =>htmlspecialchars($this->input->post('email', true)),
-	 			'gambar' => 'default.jpg',
-	 			'password' => password_hash($this->input->post('pass'), PASSWORD_DEFAULT),
-	 			'role_id' => 2,
-	 			'status' => 1,
-				];
-
-				$this->db->insert('tbl_user', $data);
-				redirect('welcome/login');
-	 		}
-	 	}
-	 	
+	 	$this->load->view('frontend/login');
 	 }
 
+}

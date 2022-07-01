@@ -48,10 +48,6 @@
       <td> author </td>
       <td><input type="text" name="author" /></td>
     </tr>
-    <tr>
-      <td> gambar </td>
-      <td><input type="file" name="gambar" /></td>
-    </tr>
 		<tr>
 			<td><input type="submit" name="btnsubmit" value="Tambah"/></td>
 		</tr>

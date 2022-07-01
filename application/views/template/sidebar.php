@@ -46,13 +46,55 @@
               </p>
             </a>
           </li>
+         <!--  <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-globe-asia"></i>
+              <p>
+                Profil Desa
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">5</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_potensi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Potensi Desa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_peta') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Peta Desa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_bpd') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BPD</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_pemerintah') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pemerintah Desa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_visi') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Visi Dan Misi</p>
+                </a>
+              </li>
+            </ul>
+          </li> -->
            <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-pager"></i>
               <p>
                 Halaman
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">5</span>
+                <span class="badge badge-info right">4</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -62,28 +104,16 @@
                   <p>Berita</p>
                 </a>
               </li>
-              <!--<li class="nav-item">-->
-              <!--  <a href="<?php //echo base_url('admin/v_agenda') ?>" class="nav-link">-->
-              <!--    <i class="far fa-circle nav-icon"></i>-->
-              <!--    <p>Agenda</p>-->
-              <!--  </a>-->
-              <!--</li>-->
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_agenda') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agenda</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="<?php echo base_url('admin/v_pengumuman') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pengumuman</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('admin/v_aspirasi') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Aspirasi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('admin/v_pengaduan') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pengaduan</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -92,16 +122,31 @@
                   <p>Galeri</p>
                 </a>
               </li>
+              <!-- <li class="nav-item">
+                <a href="<?php echo base_url('admin/v_keuangan') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Keuangan Desa</p>
+                </a>
+              </li> -->
             </ul>
           </li>
            <li class="nav-item">
             <a href="<?php echo base_url('admin/v_profil') ?>" class="nav-link">
               <i class="far fa-address-book"></i>
               <p>
-                User 
+                Profil
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('admin/v_kontak') ?>" class="nav-link">
+              <i class="far fa-address-book"></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li>
+         
       </nav>
       <!-- /.sidebar-menu -->
     </div>

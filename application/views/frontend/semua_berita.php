@@ -25,7 +25,7 @@
                 <?php foreach ($berita->result() as $key => $value) : ?>
                 <article class="col-block">
                     <div class="col-md-4">
-                    <a href="<?php echo base_url('welcome/detail_berita/'.$value->id_berita); ?>"><img src="../gambar/LOGO12.jpeg" alt="wrapkit" class="img-fluid" /></a>
+                    <a href="#"><img src="<?php echo base_url('welcome/detail_berita/'.$value->id_berita); ?>"<?php echo $value->gambar; ?> alt="wrapkit" class="img-fluid" /></a>
                   </div>
                    <!--  <div class="blog-date">
                         <a href="<?php echo base_url('welcome/detail_berita/'.$value->id_berita); ?>"><?php echo date('d-m-Y H:i:s',strtotime($value->tgl)); ?></a>

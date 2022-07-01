@@ -42,10 +42,6 @@
                             <a href="#" data-sort="judul">Judul Galeri</a>
                         </th>
                         <th>
-                            <a href="#" data-sort="judul">Isi Galeri</a>
-                        </th>
-                        
-                        <th>
                             <a href="#" data-sort="isi">Tanggal </a>
                         </th>
                         <th>
@@ -56,19 +52,18 @@
                         </th>
                     </tr>
                 </thead>
-                <?php foreach ($galeri->result() as $key => $G) { ?>
+                <?php foreach ($galeri->result() as $key => $value) { ?>
                 <tr data-key="1">
-                    <td><?= $G->id_galeri ?></td>
-                    <td><?= $G->judul_galeri ?></td>
-                    <td><?= $G->isi_galeri ?></td>
-                    <td><?= $G->tgl ?></td>
-                    <td><?= $G->gambar ?></td>
+                    <td><?= $value->id_galeri ?></td>
+                    <td><?= $value->judul_galeri ?></td>
+                    <td><?= $value->tgl ?></td>
+                    <td><?= $value->gambar_galeri ?></td>
 
                     <td>
                         <i class="far fa-edit"></i><a
-                            href="<?php echo base_url('admin/edit_gambar/') . $G->id_galeri ?>">Edit</a> |
+                            href="<?php echo base_url('admin/edit_gambar/') . $value->id_galeri ?>">Edit</a> |
                         <i class="fas fa-trash-alt"></i><a
-                            href="<?php echo base_url('admin/hapus_gambar/') . $G->id_galeri ?>">Hapus</a>
+                            href="<?php echo base_url('admin/hapus_gambar/') . $value->id_galeri ?>">Hapus</a>
                     </td>
                     <?php } ?>
                     <a href="#" title="View" aria-label="View" data-pjax="0">
